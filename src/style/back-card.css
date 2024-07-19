@@ -1,0 +1,106 @@
+.Card {
+  background-color: var(--basic-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.Card .text {
+  margin-left: 30px;
+}
+.Card .text h3 {
+  color: var(--green-color);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+.Card .text div {
+  margin-top: 10px;
+}
+.Card .text div h2 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #fff;
+}
+.Card .text div h4 {
+  color: #fff;
+  font-weight: 600;
+}
+
+.Card .img {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.Card .img::before {
+  content: " ";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    #125567 0%,
+    #125567 15%,
+    #135e72 15%,
+    #135e72 30%,
+    #186f85 30%,
+    #186f85 45%,
+    #1d8596 45%,
+    #1d8596 60%,
+    #2496a5 60%,
+    #2496a5 100%
+  );
+  z-index: 1;
+}
+
+.Card .img img {
+  object-fit: contain;
+  margin-top: 50px;
+  height: 350px;
+  width: 250px;
+  position: relative;
+  z-index: 10;
+}
+.Card .img img:last-child {
+  transform: scaleX(-1);
+}
+.Card .btn_card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Card .btn_card button {
+  width: 150px;
+  height: 50px;
+  font-weight: 700;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  color: var(--basic-color);
+  transition: all 0.3s ease-in-out;
+}
+.Card .btn_card button:hover {
+  width: 165px;
+  height: 55px;
+  border-radius: 7px;
+  letter-spacing: 2px;
+}
+@media screen and (max-width: 992px) {
+  .Card {
+    flex-direction: column;
+  }
+  .Card .text {
+   padding-top: 20px;
+  }
+  .Card .btn_card button {
+    width: 130px;
+    height: 40px;
+    font-size: 0.8rem;
+   margin: 20px 0;
+  }
+
+}

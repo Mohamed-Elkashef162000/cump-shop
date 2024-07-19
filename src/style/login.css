@@ -1,0 +1,50 @@
+.form {
+  background-color: var(--basic-color);
+  border-radius: 5px;
+}
+.form h3 {
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 40px 0 ;
+    letter-spacing: 1px;
+}
+.form input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid #fff;
+  color: #fff;
+  width: 80%;
+  margin-bottom: 30px;
+  padding-bottom: 5px;
+}
+.form input:focus {
+  outline: none;
+}
+.form input::placeholder {
+    color: #fff;
+    text-transform: capitalize;
+}
+.form button {
+  width: 50%;
+  height: 40px;
+  background-color: #fff;
+  color: var(--basic-color);
+  border: none;
+  border-radius: 5px;
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+.form p {
+    color: #fff;
+    padding-bottom: 30px;
+    padding-top: 10px;
+    font-weight: 700;
+    word-spacing: 1px;
+}
+.form a {
+    color: var(--yellow-color);
+    padding-left: 10px;
+}

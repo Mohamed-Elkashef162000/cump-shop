@@ -1,0 +1,140 @@
+.footer {
+  background-color: var(--basic-color);
+  display: flex;
+  align-items: center;
+}
+
+.footer_logo img {
+  width: 100px;
+  height: 50px;
+  object-fit: contain;
+}
+.footer_logo h1 {
+  font-size: 1.7rem;
+  color: #fff;
+}
+.footer_logo h1 span {
+  color: var(--yellow-color);
+}
+.footer .logo_text {
+  max-width: 90%;
+  color: #fff;
+  margin-top: 20px;
+}
+
+.footer .links h2,
+.follow h2,
+.contact h2 {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  position: relative;
+}
+.footer .links h2::before,
+.follow h2::before,
+.contact h2::before {
+  position: absolute;
+  content: "";
+  width: 50px;
+  height: 5px;
+  top: 50px;
+  left: 0;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.footer .links ul,
+.follow ul {
+  margin-top: 55px;
+  list-style: disc;
+  color: #fff;
+  margin-left: -8px;
+}
+.footer .links a,
+.follow a {
+  color: #fff;
+  line-height: 45px;
+}
+.contact .phone,
+.contact .email {
+  margin-top: 60px;
+  display: flex;
+}
+.contact .phone span,
+.contact .email span {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #fff;
+  margin-right: 20px;
+}
+.contact .phone span i,
+.contact .email i {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+.contact .phone p,
+.contact .email p {
+  color: #fff;
+}
+.contact .phone h3,
+.contact .email h3 {
+  color: #fff;
+}
+
+.copyright {
+ height: 90px;
+ padding: 0;
+  color: var(--basic-color);
+  display: flex;
+  align-items: center;
+}
+
+.copyright .info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.copyright .info h2{
+font-size: 1.8rem;
+}
+.copyright .info a {
+  padding-left: 15px;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+@media screen and (max-width: 992px) {
+  .footer_logo,
+  .links,
+  .follow,
+  .contact {
+    padding-left: 30px;
+  }
+  .logo_text {
+    padding-left: 30px;
+    margin-bottom: 20px;
+  }
+  .contact .phone span,
+  .contact .email span {
+    width: 40px;
+    height: 40px;
+  }
+  .contact .phone h3,
+  .contact .email h3,
+  .copyright .info h2 {
+    font-size: 1.2rem;
+  }
+
+  .copyright {
+    display: flex;
+    align-items: center;
+  }
+
+  .copyright .info a {
+    padding-left: 15px;
+    font-weight: 700;
+    font-size: 0.8rem;
+  }
+}

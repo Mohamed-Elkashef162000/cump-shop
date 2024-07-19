@@ -1,0 +1,54 @@
+.shoppingCarImage {
+  background: linear-gradient(rgba(0, 0, 0, 0.162), rgba(0, 0, 0, 0.162)),
+    url(../Imges/ShoppingCarImage.jpg) no-repeat center center;
+  background-size: cover;
+  min-height: 50vh;
+}
+.table tr {
+  border: 2px solid var(---primary-color) !important;
+}
+.table tr td img {
+  width: 60px !important;
+  height: 60px !important;
+  object-fit: contain;
+  font-weight: 600;
+}
+.table tr td i {
+  cursor: pointer;
+}
+td,
+th {
+  color: var(---primary-color);
+}
+.not-products {
+  color: #fff;
+  text-align: center;
+  font-size: 50px;
+  margin-top: 150px;
+}
+
+.totalAmount {
+  margin: 0 auto;
+  height: 70px;
+  width: 250px;
+  background: rgba(0, 0, 0, 0.362);
+  border-radius: 10px;
+}
+.totalAmount h3 {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  top: 10px;
+}
+.totalAmount h3::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 70px;
+  border-radius: 50%;
+  border-top: 6px solid #fff;
+  border-right: 6px solid transparent;
+  top: 35px;
+  left: 80px;
+  transform: rotate(-5deg);
+}

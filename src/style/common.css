@@ -1,0 +1,76 @@
+.common_section {
+  background-color: #f2f4f8;
+}
+.laptop {
+  background-color: var(--basic-color);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.card_imge img {
+  height: 170px;
+  object-fit: contain;
+}
+.laptop .info {
+  padding: 20px 0;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  white-space: 1px;
+}
+.laptop .info ul{
+ list-style: disc;
+ padding-top: 10px;
+}
+.laptop .info h2 {
+  font-size: 1.5rem;
+  padding-top: 5px;
+}
+.laptop h4 {
+  color: var(--green-color);
+  font-size: 1.2rem;
+}
+.laptop .info button {
+  width: 120px;
+  height: 40px;
+  margin-top: 20px;
+  color: var(--basic-color);
+  background-color: #fff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  font-weight: 700;
+  transition: all 0.3s ease-in-out;
+}
+.laptop .info button:hover {
+  width: 105px;
+  height: 35px;
+  font-size: 1rem;
+}
+
+@media only screen and (max-width: 768px){
+  
+  .common .common_section {
+    padding: 70px 0px;
+  }
+  .laptop {
+   flex-direction: column;
+  }
+  .laptop h4 {
+    font-size: 1rem;
+  }
+  .laptop .info h2 {
+    font-size: 1.2rem;
+  }
+  .laptop .info ul{
+    font-size: .8rem;
+   }
+   .laptop .info button {
+    width: 100px;
+    height: 30px;
+    letter-spacing: 1px;
+    font-size: 1rem;
+  }
+}

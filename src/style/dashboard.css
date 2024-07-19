@@ -1,0 +1,30 @@
+
+.revenue_box ,.order_box ,.products_box ,.users_box {
+   height: 300px;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   flex-direction: column;
+   border-radius: 15px;
+   border: 10px solid var(--basic-color);
+   background-color: var(--primary-color);
+   border-bottom-left-radius:50% ;
+   border-bottom-right-radius:50% ;
+   color: #fff;
+}
+.revenue_box h2,.order_box h2,.products_box h2,.users_box h2{
+    font-size: 1.7rem;
+}
+.revenue_box h4,.order_box h4,.products_box h4,.users_box h4{
+    color: var(--yellow-color);
+    font-size: 2rem;
+}
+.length {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 10px solid var(--yellow-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
