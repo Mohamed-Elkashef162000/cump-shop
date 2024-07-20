@@ -17,6 +17,8 @@
 .logo img {
   width: 1.9rem;
   height: 1.9rem;
+  border-radius: 50%;
+}
 }
 .logo h1 {
   font-size: 1.2rem;
