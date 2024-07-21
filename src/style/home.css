@@ -54,7 +54,7 @@
   font-weight: 700;
 }
 .home_btn:hover {
-  padding:13px 20px;
+  padding: 13px 20px;
   border-radius: 7px;
 }
 .hero_img {
@@ -112,7 +112,12 @@
   .hero_img::after {
     width: 450px;
     height: 150px;
- 
+  }
+  .home_btn {
+    padding: 5px 7px;
+
+    font-size: 0.8rem;
+    font-weight: 500;
   }
 }
 @media screen and (max-width: 768px) {
@@ -140,8 +145,13 @@
     width: 340px;
     height: 150px;
   }
+  .home_btn {
+    padding: 5px 7px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
 }
- @media screen and (max-width: 992px) {
+@media screen and (max-width: 992px) {
   .hero_content {
     margin-top: 50px;
   }
@@ -171,11 +181,8 @@
     right: -10px;
   }
   .buy_btn {
-    padding: 7px 7px;
+    padding: 5px 5px;
     font-size: 0.7rem;
     margin-top: 30px;
-  } 
-
+  }
 }
-
-

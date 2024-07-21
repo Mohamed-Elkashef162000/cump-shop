@@ -1,5 +1,8 @@
 
-
+.filter {
+  margin: 0 auto;
+  background-color: aqua;
+}
 .filter select {
   padding: 10px 10px;
   border: 2px solid var(--basic-color);

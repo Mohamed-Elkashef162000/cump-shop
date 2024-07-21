@@ -52,3 +52,17 @@ th {
   left: 80px;
   transform: rotate(-5deg);
 }
+
+@media screen and (max-width: 768px) {
+ 
+   table tr {
+    font-size: 1rem;
+   }
+  table td {
+    font-size: 0.5rem;
+    background-color: brown;
+  }
+  .not-products {
+    font-size: 1.2rem;
+  }
+}

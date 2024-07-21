@@ -18,7 +18,10 @@
   width: 1.9rem;
   height: 1.9rem;
   border-radius: 50%;
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 }
 .logo h1 {
   font-size: 1.2rem;
@@ -103,6 +106,11 @@
   z-index: 999;
   box-shadow: 3px 3px 8px -3px #ddd;
 }
+@media screen and (max-width: 576px) {
+  .logo img {
+    display: none;
+  }
+}
 
 @media screen and (max-width: 992px) {
   .navigation {
@@ -144,11 +152,12 @@
 
   .logo h1 {
     font-size: 1rem;
+    font-weight: 500;
     margin-left: 10px;
   }
   .logo img {
-    width: 1.5rem;
-    height: 1.5rem;
+width: 1.5rem;
+height: 1.5rem;
    
   }
   .fav_icon i,

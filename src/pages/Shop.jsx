@@ -100,7 +100,7 @@ const Shop = () => {
         <Container>
           <Row>
             <Col lg="4" md="12">
-              <div className="filter w-100">
+              <div className="filter">
                 <select className="w-50 " onChange={handelFilter}>
                   <option value="All">All</option>
                   <option value="Desktop">Desktop</option>
