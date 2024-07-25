@@ -18,7 +18,7 @@ const Header = () => {
   const location = useLocation();
   const { currentUser } = useAuth();
   let linkName = location.pathname === "/cump-shop/signup" ? "Signup" : "Login";
-
+  console.log(currentUser)
   const stickyHeader = () => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 80) {
@@ -137,7 +137,7 @@ const Header = () => {
                   alt=""
                 />
               </span>
-              {currentUser && <h5>{currentUser.displayName}</h5>}
+              {currentUser && <h5 className="userName">{currentUser.displayName}</h5>}
               <div className="mobile_menu">
                 <span onClick={menuToggle}>
                   <i className="ri-menu-line"></i>
