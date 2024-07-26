@@ -144,8 +144,9 @@
   .device_Amd h2 span::after {
    display: none;
   }
-  device_hp .hp_text a {
-  font-size: 0.8rem;
-  
+  .device_Amd a {
+  color: var(--green-color);
+  padding: 40px 10px 0;
+    font-size: 1rem;
   }
 }
