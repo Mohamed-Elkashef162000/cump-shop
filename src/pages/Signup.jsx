@@ -1,8 +1,7 @@
 import { Container, Col, Row, Form, FormGroup } from "reactstrap";
-
 import Helmet from "../components/Helmet/Helmet";
 import "../style/login.css";
-import user from "../Imges/user.png";
+import userImg from "../Imges/user.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
@@ -11,13 +10,14 @@ import { setDoc, doc } from "firebase/firestore";
 import { auth, storage, db } from "../firebase";
 import Swal from "sweetalert2";
 import useAuth from "../custom-hooks/useAuth";
+
 const Signup = () => {
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [file, setFile] = useState(user);
+  const [file, setFile] = useState(null); // اتركها null في البداية
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate(); // Updated function name
+  const navigate = useNavigate();
 
   const { currentUser } = useAuth();
   const signup = async (e) => {
@@ -32,57 +32,80 @@ const Signup = () => {
       );
       const user = userCredential.user;
 
-      const storageRef = ref(storage, `images/${Date.now()}_${userName}`);
+      const uploadFile = file || userImg;
 
-      const uploadTask = uploadBytesResumable(storageRef, file);
+      if (file) {
+        const storageRef = ref(storage, `images/${Date.now()}_${userName}`);
+        const uploadTask = uploadBytesResumable(storageRef, uploadFile);
 
-      uploadTask.on(
-        "state_changed",
-        null,
-        (error) => {
-          Swal.fire({
-            icon: "error",
-            title: "Error",
-            text: "Something went wrong during file upload.",
-            cancelButtonText: "",
-            confirmButtonColor: "#bb2424",
-          });
-          setLoading(false);
-        },
-        async () => {
-          try {
-            const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
-            await updateProfile(user, {
-              displayName: userName,
-              photoURL: downloadURL,
-            });
-            await setDoc(doc(db, "users", user.uid), {
-              uid: user.uid,
-              displayName: userName,
-              email,
-              photoURL: downloadURL,
-            });
-            setLoading(false);
-            Swal.fire({
-              icon: "success",
-              title: "Success",
-              text: "Account created successfully!",
-              cancelButtonText: "",
-            });
-
-            navigate("/cump-shop/login"); // Move navigation here
-          } catch (error) {
+        uploadTask.on(
+          "state_changed",
+          null,
+          (error) => {
             Swal.fire({
               icon: "error",
               title: "Error",
-              text: "Failed to get the download URL.",
+              text: "Something went wrong during file upload.",
               cancelButtonText: "",
               confirmButtonColor: "#bb2424",
             });
             setLoading(false);
+          },
+          async () => {
+            try {
+              const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
+              await updateProfile(user, {
+                displayName: userName,
+                photoURL: downloadURL,
+              });
+              await setDoc(doc(db, "users", user.uid), {
+                uid: user.uid,
+                displayName: userName,
+                email,
+                photoURL: downloadURL,
+              });
+              setLoading(false);
+              Swal.fire({
+                icon: "success",
+                title: "Success",
+                text: "Account created successfully!",
+                cancelButtonText: "",
+              });
+
+              navigate("/cump-shop/login");
+            } catch (error) {
+              Swal.fire({
+                icon: "error",
+                title: "Error",
+                text: "Failed to get the download URL.",
+                cancelButtonText: "",
+                confirmButtonColor: "#bb2424",
+              });
+              setLoading(false);
+            }
           }
-        }
-      );
+        );
+      } else {
+        await updateProfile(user, {
+          displayName: userName,
+          photoURL: uploadFile,
+        });
+        await setDoc(doc(db, "users", user.uid), {
+          uid: user.uid,
+          displayName: userName,
+          email,
+          photoURL: uploadFile,
+        });
+        setLoading(false);
+        Swal.fire({
+          icon: "success",
+          title: "Success",
+          text: "Account created successfully!",
+          cancelButtonText: "",
+        });
+
+        navigate("/cump-shop/login");
+      }
     } catch (error) {
       Swal.fire({
         icon: "error",
@@ -147,7 +170,7 @@ const Signup = () => {
                     {loading ? "Creating account..." : "Create an account"}
                   </button>
                   <p>
-                    Already have an account?{" "}
+                    Already have an account?
                     <Link to="/cump-shop/Login">Login</Link>
                   </p>
                 </Form>

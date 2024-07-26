@@ -1,7 +1,5 @@
-
 .filter {
   margin: 0 auto;
-  background-color: aqua;
 }
 .filter select {
   padding: 10px 10px;
@@ -45,6 +43,6 @@
     padding: 5px 10px;
   }
   .filter select option {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 }
