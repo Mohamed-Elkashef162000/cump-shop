@@ -56,7 +56,7 @@ const Footer = () => {
                     <Link>Facebook</Link>
                   </li>
                   <li>
-                    <Link>Instaram</Link>
+                    <Link>Instagram</Link>
                   </li>
                   <li>
                     <Link>Twiter</Link>
